@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primaryColorOne: hsl(232, 19%, 15%);
+  --primaryColorTwo: hsl(230, 17%, 14%);
+  --secondaryColor: white;
+  --toggleOne: hsl(210, 78%, 56%);
+  --toggleTwo: hsl(146, 68%, 55%);
+}
+
+.night {
+  --primaryColorOne: white;
+  --primaryColorTwo: white;
+  --secondaryColor: black;
+  --toggleOne: hsl(228, 34%, 66%);
+  --toggleTwo: hsl(228, 34%, 66%);
+}
+
+body {
+  background-color: #333;
+  background-image: linear-gradient(var(--primaryColorOne), var(--primaryColorTwo));
+}
+
+.container {
+  width: 50rem;
+  margin: 2rem auto;
+}
+.container p {
+  color: hsl(228deg, 22%, 55%);
+}
+
+.head {
+  width: 100%;
+}
+.head h2 {
+  color: var(--secondaryColor);
+}
+.head .sub-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+.head .hr {
+  display: none;
+}
+.head .mode {
+  display: flex;
+  align-items: center;
+}
+.head .mode p {
+  margin-right: 0.5rem;
+}
+
+.switch {
+  width: 2rem;
+  height: 1rem;
+  border-radius: 1rem;
+  display: inline-block;
+  position: relative;
+  background-image: linear-gradient(var(--toggleOne), var(--toggleTwo));
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.slider:after {
+  content: "";
+  width: 0.8rem;
+  border-radius: 100%;
+  height: 0.8rem;
+  position: absolute;
+  background-color: hsl(230deg, 17%, 14%);
+  transition: all 0.4s;
+  top: 0.1rem;
+  left: 0.1rem;
+}
+
+input {
+  opacity: 1;
+  width: 0;
+  height: 0;
+}
+
+input:checked + .slider:after {
+  left: 1rem;
+}
+
+.social-tab {
+  display: grid;
+  width: 100%;
+  margin: 2rem 0;
+  gap: 1.5rem;
+  grid-template-columns: repeat(4, minmax(11rem, 1fr));
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+  gap: 1rem;
+  flex-direction: column;
+  background-color: hsl(228deg, 28%, 20%);
+  border-radius: 2px;
+  position: relative;
+}
+.socials h1 {
+  color: var(--secondaryColor);
+}
+.socials .facebook, .socials .youtube, .socials .instagram, .socials .twitter {
+  width: 100%;
+  height: 5px;
+  border-radius: 1px;
+  background-color: hsl(208deg, 92%, 53%);
+}
+.socials .twitter {
+  background-color: hsl(203deg, 89%, 53%);
+}
+.socials .instagram {
+  background-image: linear-gradient(90deg, hsl(37deg, 97%, 70%), hsl(329deg, 70%, 58%));
+}
+.socials .youtube {
+  background-color: hsl(348deg, 97%, 39%);
+}
+.socials .social-handle {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: hsl(228deg, 32%, 68%);
+}
+.socials .social-handle .social-icon {
+  margin-right: 0.5rem;
+}
+.socials .followers {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.socials .followers h1 {
+  font-size: 3rem;
+}
+.socials .followers p {
+  letter-spacing: 3px;
+}
+
+.social-reaction {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.social-reaction p {
+  margin-left: 0.5rem;
+}
+.social-reaction .light-red {
+  color: hsl(356deg, 69%, 56%);
+}
+.social-reaction .green {
+  color: hsl(163deg, 72%, 41%);
+}
+
+.overview > h3 {
+  color: var(--secondaryColor);
+}
+
+.social-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: hsl(228deg, 28%, 20%);
+  padding: 1rem;
+}
+.social-overview h3 {
+  color: var(--secondaryColor);
+}
+
+.light-mode {
+  background-color: rgb(228, 231, 243);
+}
+
+.socials-view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 2rem;
+  }
+  .container p {
+    font-weight: bold;
+  }
+  .social-tab {
+    grid-template-columns: 100%;
+  }
+  .head .sub-head {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .head .hr {
+    display: block;
+    width: 100%;
+    border: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    height: 2px;
+    background-color: rgb(88, 85, 85);
+    margin: 1rem 0;
+  }
+  .head .mode {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .head .mode p {
+    font-weight: bold;
+  }
+}/*# sourceMappingURL=style.css.map */
